@@ -18,7 +18,7 @@ new ScalableImage(
 ```
 
 
-That's all you need. See below and [`scalable_image_example/`](https://github.com/epnw/scalable_image/tree/master/scalable_image_example)
+That's all you need. See below and [`example/`](https://github.com/epnw/scalable_image/tree/master/example)
 for an example.
 
-![demo!](https://raw.githubusercontent.com/epnw/scalable_image/master/scalable_image_example/demo.gif)
+![demo!](https://raw.githubusercontent.com/epnw/scalable_image/master/example/demo.gif)
