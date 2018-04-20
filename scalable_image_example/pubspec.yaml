@@ -1,0 +1,13 @@
+name: scalable_image_example
+description: An extremely simple demo of the scalable_image plugin.
+
+dependencies:
+  flutter:
+    sdk: flutter
+  scalable_image:
+    path: ../
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/example.png
