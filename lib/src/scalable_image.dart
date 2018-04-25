@@ -6,7 +6,7 @@ import 'dart:math';
 
 class ScalableImage extends StatefulWidget {
 
-  const ScalableImage({Key key,@required imageProvider,double maxScale,double dragSpeed,Size size,bool wrapInAspect,bool enableScaling}):
+  const ScalableImage({Key key,@required ImageProvider imageProvider,double maxScale,double dragSpeed,Size size,bool wrapInAspect,bool enableScaling}):
         assert(imageProvider != null),
         this._imageProvider=imageProvider,
         assert((maxScale??16.0)>1.0),
