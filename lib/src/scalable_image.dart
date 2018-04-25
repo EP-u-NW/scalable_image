@@ -6,16 +6,19 @@ import 'dart:math';
 
 class ScalableImage extends StatefulWidget {
 
-  const ScalableImage({Key key,@required imageProvider,maxScale,dragSpeed,size}):
+  const ScalableImage({Key key,@required imageProvider,double maxScale,double dragSpeed,Size size,bool wrapInAspect,bool enableScaling}):
         assert(imageProvider != null),
         this._imageProvider=imageProvider,
-        assert(maxScale??16.0>1.0),
+        assert((maxScale??16.0)>1.0),
         this._maxScale=maxScale??16.0,
         this._dragSpeed=dragSpeed??8.0,
         this._size=size??const Size.square(double.infinity),
+        this._wrapInAspect=wrapInAspect??false,
+        this._enableScaling=enableScaling??true,
         super(key: key);
 
   final ImageProvider _imageProvider;
+  final bool _wrapInAspect,_enableScaling;
   final double _maxScale,_dragSpeed;
   final Size _size;
 
@@ -85,16 +88,26 @@ class _ScalableImageState extends State<ScalableImage> {
           )
       );
     } else {
-      return  new GestureDetector(
-        child:new CustomPaint(
-          size: widget._size,
-          painter: new _ScalableImagePainter(_imageInfo.image,_offset,_scale),
-          willChange: true,
-        ),
-        onScaleUpdate: _handleScaleUpdate,
-        onScaleEnd: _handleScaleEnd,
-        onScaleStart:  _handleScaleStart,
+      Widget painter=new CustomPaint(
+        size: widget._size,
+        painter: new _ScalableImagePainter(_imageInfo.image,_offset,_scale),
+        willChange: true,
       );
+      if(widget._wrapInAspect){
+        painter=new AspectRatio(
+            aspectRatio: _imageSize.width/_imageSize.height,
+            child:painter);
+      }
+      if(widget._enableScaling) {
+        return new GestureDetector(
+          child: painter,
+          onScaleUpdate: _handleScaleUpdate,
+          onScaleEnd: _handleScaleEnd,
+          onScaleStart: _handleScaleStart,
+        );
+      } else {
+        return painter;
+      }
     }
   }
 

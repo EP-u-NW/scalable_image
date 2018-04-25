@@ -25,6 +25,8 @@ class MainPage extends StatelessWidget {
           imageProvider: new AssetImage('assets/example.png'),
           dragSpeed: 4.0,
           maxScale: 16.0,
+          wrapInAspect: false,
+          enableScaling: true,
         ),
       ),
     );

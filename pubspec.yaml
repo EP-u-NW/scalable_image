@@ -1,6 +1,6 @@
 name: scalable_image
 description: A widget that shows an image which can be scaled and dragged using gestures
-version: 1.0.0
+version: 1.1.0
 author: EPNW <prokopwieler.hardundsoftware@gmail.com>
 homepage: https://github.com/epnw/scalable_image
 
