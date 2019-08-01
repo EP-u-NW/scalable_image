@@ -56,8 +56,8 @@ class _ScalableImageState extends State<ScalableImage> {
     final ImageStream oldImageStream = _imageStream;
     _imageStream = widget._imageProvider.resolve(createLocalImageConfiguration(context));
     if (_imageStream.key != oldImageStream?.key) {
-      oldImageStream?.removeListener(_updateImage);
-      _imageStream.addListener(_updateImage);
+      oldImageStream?.removeListener(ImageStreamListener(_updateImage));
+      _imageStream.addListener(ImageStreamListener(_updateImage));
     }
   }
 
@@ -70,7 +70,7 @@ class _ScalableImageState extends State<ScalableImage> {
 
   @override
   void dispose() {
-    _imageStream.removeListener(_updateImage);
+    _imageStream.removeListener(ImageStreamListener(_updateImage));
     super.dispose();
   }
 
