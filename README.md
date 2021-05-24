@@ -1,3 +1,6 @@
+# [DISCONTINUED] - 24.05.2021
+While this widget was useful in the early days of Flutter, the Flutter team introduced an own way to zoom and pan, see [`InteractiveViewer`](https://api.flutter.dev/flutter/widgets/InteractiveViewer-class.html).
+
 # scalable_image
 
 A widget that shows an image which can be scaled and dragged using gestures.

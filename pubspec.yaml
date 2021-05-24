@@ -1,6 +1,6 @@
 name: scalable_image
 description: A widget that shows an image which can be scaled and dragged using gestures
-version: 1.1.2
+version: 1.1.3
 author: EPNW <prokopwieler.hardundsoftware@gmail.com>
 homepage: https://github.com/epnw/scalable_image
 
@@ -9,6 +9,6 @@ dependencies:
     sdk: flutter
 
 environment:
-  sdk: ">=2.0.0-dev.28.0 <3.0.0"
+  sdk: ">=2.0.0 <3.0.0"
   flutter: ">=0.1.4 <2.0.0"
 
